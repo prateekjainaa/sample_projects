@@ -1,0 +1,2 @@
+FROM jboss/wildfly
+ADD hello-service-ear/target/*.ear /opt/jboss/wildfly/standalone/deployments/
