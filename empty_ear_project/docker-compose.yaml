@@ -4,7 +4,7 @@ services:
      build: 
        context: .
        dockerfile: docker_jboss
-     ports:
+     ports:http://localhost:9990/console
       - "8080:8080"
       - "9990:9990"
       - "8787:8787"
