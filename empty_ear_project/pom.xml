@@ -1,16 +1,15 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.pjain</groupId>
-    <artifactId>hello-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <properties>
-        <version.war.plugin>2.6</version.war.plugin>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <json-simple.version>1.1.1</json-simple.version>
-        <resteasy-jaxrs.version>3.1.4.Final</resteasy-jaxrs.version>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.pjain</groupId>
+  <artifactId>hello-service</artifactId>
+  <version>0.0.1-SNAPSHOT</version>  
+  <packaging>pom</packaging>
+  <properties>
+		<version.war.plugin>2.6</version.war.plugin>		
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<json-simple.version>1.1.1</json-simple.version>
+		<resteasy-jaxrs.version>2.3.4.Final</resteasy-jaxrs.version>
 
         <ear.Dependencies>org.slf4j</ear.Dependencies>
     </properties>
