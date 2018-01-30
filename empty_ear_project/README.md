@@ -27,3 +27,5 @@ You can also configure values directly in the subsystem, e.g.:
             <property name="app.myprop" value="25"/>
         </config-source>
     </subsystem>
+    
+  You can start wildfly like standalone.sh -DuserName="zzzzzzzzz" and see value is getting overridden.  
