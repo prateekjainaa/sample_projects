@@ -13,8 +13,11 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
+import org.eclipse.microprofile.config.inject.ConfigProperty;
+
 import com.pjain.hello.service.HelloService;
 import com.pjain.hello.vo.User;
+import com.pjain.service.hello.config.HelloConfiguration;
 
 /**
 *
@@ -30,8 +33,12 @@ public class HelloResource {
     @Context
     private UriInfo uriInfo;
     
+    /*@Inject
+    private HelloConfiguration config;*/
+    
     @Inject
-    private HelloService service;
+    @ConfigProperty(name="userName", defaultValue="duke")
+    String user;
 
     @GET
     @Path("/hello")
@@ -40,9 +47,9 @@ public class HelloResource {
     }
     
     @GET
-    @Path("/hello-cdi")
-    public Response helloCdiCall(@QueryParam("name") final String name) {
-        return Response.status(200).entity(service.greet(name)).build();
+    @Path("/hello-config")
+    public Response helloConfigCall(@QueryParam("name") final String name) {
+        return Response.status(200).entity("HEllo!!! " + user).build();
     }
     
     @POST
