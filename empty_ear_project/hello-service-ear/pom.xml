@@ -17,6 +17,7 @@
                 <artifactId>maven-ear-plugin</artifactId>
                 <version>2.9</version>
                 <configuration>
+                <finalName>test-service</finalName>
                     <version>7</version>
                     <workDirectory>target/${project.parent.artifactId}-${project.version}</workDirectory>
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
@@ -43,7 +44,7 @@
                             <groupId>${project.groupId}</groupId>
                             <artifactId>${project.parent.artifactId}-war</artifactId>
                             <bundleFileName>${project.parent.artifactId}-war.war</bundleFileName>
-                            <contextRoot>/v1/helloService</contextRoot>
+                            <contextRoot>/v1/testService</contextRoot>
                         </webModule>
                     </modules>
                 </configuration>
@@ -59,8 +60,6 @@
             </plugin>            
         </plugins>
     </build>
-
-
 
     <dependencies>
         <dependency>
@@ -79,6 +78,11 @@
             <artifactId>hello-service-war</artifactId>
             <version>${project.version}</version>
             <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>com.pjain</groupId>
+            <artifactId>hello-service-core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
