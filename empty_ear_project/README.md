@@ -6,7 +6,7 @@ sample url : http://localhost:8080/v1/helloService/hello?name=Prateek
 
 To add it to an existing WildFly server installation:
 
- download and unzip the distribution wildfly-microprofile-config-dist zip.
+ download and unzip the distribution wildfly-microprofile-health-dist zip.
 
     Copy the relevant modules to your WildFly installation:
 
@@ -16,16 +16,15 @@ To add it to an existing WildFly server installation:
 
     Add the extension and subsystem to your standalone.xml:
 
-    a. In the <extensions> add <extension module="org.wildfly.extension.microprofile.config"/>
+    a. In the <extensions> add <extension module="org.wildfly.extension.microprofile.health"/>
 
-    b. In the <profile> add <subsystem xmlns="urn:wildfly:microprofile-config:1.0"/>
+    b. In the <profile> add 
+    <subsystem xmlns="urn:wildfly:microprofile-health:1.0">
+            <http path="/health"/>
+        </subsystem>
 
-You can also configure values directly in the subsystem, e.g.:
 
-    <subsystem xmlns="urn:wildfly:microprofile-config:1.0">
-        <config-source name="appConfigSource">
-            <property name="app.myprop" value="25"/>
-        </config-source>
-    </subsystem>
-    
-  You can start wildfly like standalone.sh -DuserName="zzzzzzzzz" and see value is getting overridden.  
+ Access health data like, "http://<jboss_IP>:<PORT>/health"
+ 
+ 
+ 
