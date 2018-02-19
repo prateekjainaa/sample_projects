@@ -29,7 +29,7 @@
                             <Dependencies>${project.ear.Dependencies}</Dependencies>
                         </manifestEntries>
                     </archive>
-                    <skinnyWars>true</skinnyWars>
+                    <!-- <skinnyWars>true</skinnyWars> -->
                     <modules>
                         <ejbModule>
                             <groupId>${project.groupId}</groupId>

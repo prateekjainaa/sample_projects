@@ -21,11 +21,11 @@
             <artifactId>hello-service-common</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
+        <!-- <dependency>
             <groupId>com.pjain</groupId>
             <artifactId>hello-service-ejb</artifactId>
             <version>${project.version}</version>
             <scope>provided</scope>
-        </dependency>
+        </dependency> -->
     </dependencies>
 </project>
