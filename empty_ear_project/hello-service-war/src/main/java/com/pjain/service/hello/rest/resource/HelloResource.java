@@ -14,6 +14,9 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
+import org.eclipse.microprofile.metrics.annotation.Counted;
+import org.eclipse.microprofile.metrics.annotation.Metered;
+import org.eclipse.microprofile.metrics.annotation.Timed;
 
 import com.pjain.hello.service.HelloService;
 import com.pjain.hello.vo.User;
@@ -25,6 +28,7 @@ import com.pjain.service.hello.config.HelloConfiguration;
 *
 */
 @Path("/")
+@Timed(displayName="topLevel")
 public class HelloResource {
 
     @Context
@@ -54,6 +58,9 @@ public class HelloResource {
     
     @POST
     @Path("/pojo")
+    @Metered(displayName="pojoCall")
+    @Timed(displayName="helloTimed")
+    @Counted(displayName="helloCounted")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response helloPojoCall(User user) {
